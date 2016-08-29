@@ -1,0 +1,65 @@
+@mixin site-width {
+  width: 100%;
+  padding: 0 5%;
+  @include box-sizing(border-box);
+}
+
+@mixin full-width { //overrides site width for full bleed
+    width: 111.5%;
+    margin: 0 -5.95% 0 -5.95%;
+    @include box-sizing(border-box);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background: $white image-url("gplaypattern.png");
+}
+
+img {
+  border: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  display: block;
+  padding: 60px 0;
+  &.intro {
+    display: block;
+    padding: 0 0 60px;
+  }
+  aside {
+    display: block;
+  }
+  .main {
+    display: block;
+    padding-top: 0;
+  }
+  @include respond-to(medium) {
+    @include flexbox();
+    padding: 30px 0;
+    aside {
+      @include flex(0 0 200px);
+    }
+    .main {
+      @include flex(1 1 auto);
+      padding-top: 45px;
+    }
+  }
+}
+
+.bodycontent {
+  @include site-width;
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: $white;
+  display: block;
+  min-height: 100%;
+  position: relative;
+  padding-top: 70px;
+  @include box-shadow(rgba($black, .1) 0 0 7px);
+}

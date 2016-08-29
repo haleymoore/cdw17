@@ -1,0 +1,132 @@
+header {
+	@include site-width;
+	background: $white;
+	position: fixed;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	z-index: +2;
+	top: 0;
+	@include box-shadow(rgba($black, .1) 0px 2px 5px);
+	.logo_small {
+		@include hide-text;
+		width: 107px;
+		height: 32px;
+		position: absolute;
+		top: -40px;
+		left: 50%;
+		background: image-url('cdw_logo_small.png') no-repeat;
+		opacity: 1;
+		margin-left: -53px;
+		&:hover {
+			opacity: .5;
+		}
+		&.active {
+			top: 15px;
+		}
+		@include respond-to(medium) {
+			left: 5%;
+			margin-left: 0;
+			&.active {
+				top: 20px;
+			}
+		}
+	}
+	.hamburger {
+		position: absolute;
+		display: block;
+		top: 10px;
+		left: 5%;
+		padding: 5px;
+		font-family: $font-narrow;
+		color: $pink;
+		@include font-size(16);
+		&::before {
+			content: ' ';
+			display: block;
+			width: 27px;
+			height: 16px;
+			background: image-url('hamburger.png') no-repeat;
+		}
+		&:hover {
+			background: none;
+		}
+		&.active {
+			&::before {
+				background: image-url('hamburger_close.png') no-repeat;
+			}
+		}
+		@include respond-to(medium) {
+			display: none;
+		}
+	}
+	nav {
+		text-align: center;
+		ul {
+			&.main {
+				margin-top: 30px;
+				max-height: 0;
+				overflow: hidden;
+				@include animate-object;
+				&.active {
+					max-height: 250px;
+				}
+				li {
+					display: block;
+					border-right: none;
+					border-bottom: 1px solid $pink;
+					margin: 0;
+					&:last-child {
+						border-bottom: none;
+					}
+					a {
+						display: block;
+						@include font-narrow;
+						color: $pink;
+						@include font-size(25);
+						padding: 5px 15px;
+						&:hover {
+							background: $pink;
+							color: $white;
+						}
+					}
+				}
+				@include respond-to(medium) {
+					margin-top: 0;
+					max-height: 100px;
+					li {
+						display: inline-block;
+						border-right: 1px solid $pink;
+						border-bottom: none;
+						&:last-child {
+							border-right: none;
+						}
+					}
+				}
+			}
+			&.social {
+				position: absolute;
+				margin-top: 0;
+				top: 20px;
+				right: 5%;
+				li {
+					display: inline-block;
+					margin: 0;
+					a {
+						@include font-social;
+						text-transform: none;
+						@include font-size(15);
+						padding: 5px;
+						color: $pink;
+						&:hover {
+							background: $pink;
+							color: $white;
+						}
+					}
+				}
+				@include respond-to(medium) {
+					top: 25px;
+				}
+			}
+		}
+	}
+}

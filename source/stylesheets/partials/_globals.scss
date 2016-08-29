@@ -1,0 +1,222 @@
+// COLORS
+$pink: #ff0068;
+$blue: #2daebf;
+$teal: #6e8e8e;
+
+$light-grey: #F1F1F2;
+$grey: #D1D2D4;
+
+$white: #fff;
+$black: #3E3F41;
+
+// OTHER VARIABLES
+
+// MIXINS
+@mixin font-size($sizeValue: 1.6, $line: $sizeValue * 1.3){
+  font-size: ($sizeValue * 1) + px;
+  line-height: ($line * 1) + px;
+  font-size: ($sizeValue / 10) + rem;
+  line-height: ($line / 10) + rem;
+}
+
+@mixin anti-alias { //FIXES ANTI-ALIASING ON WEBKIT
+  -webkit-font-smooth: always !important;
+  -ms-font-smooth: always !important;
+  -moz-font-smooth: always !important;
+  -o-font-smooth: always !important;
+  font-smooth: always !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  font-smoothing: antialiased !important;
+}
+
+@mixin respond-to($media) {
+  @if $media == xsmall {
+    @media only screen and (min-width: 450px){ @content; }
+  }
+  @if $media == small {
+    @media only screen and (min-width: 650px){ @content; }
+  }
+  @else if $media == medium {
+    @media only screen and (min-width: 850px){ @content; }
+  }
+  @else if $media == large {
+    @media only screen and (min-width: 1025px){ @content; }
+  }
+}
+
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+@mixin clear-float {
+  &:before, &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after{
+    clear: both;
+  }
+}
+
+@mixin hide-text {
+  color: transparent;
+  text-shadow: none;
+  text-indent: -999999px;
+}
+
+@mixin animate-object {
+  @include transition-duration(.3s);
+}
+
+@mixin aspect-ratio($width, $height) { // aspect-ratio(16, 9);
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@mixin selection {
+  ::-moz-selection { @content; }
+  ::selection { @content; }
+}
+
+// IMAGES
+$sprite: image-url("sprite.svg");
+$sprite-fallback: image-url('sprite.png');
+$sprite-size: 400px 3759px;
+
+@mixin sprite-hover($idle-x, $position-y, $hover-x) {
+  background-image: $sprite;
+  background-size: $sprite-size !important;
+  background-position: $idle-x $position-y;
+  background-repeat: no-repeat;
+  @include transition-duration(0);
+  .no-svg & {
+    background-image: $sprite-fallback;
+  }
+  &:hover {
+    background-position: $hover-x $position-y;
+  }   
+}
+
+@mixin img-content($img-x, $img-y) {
+  content: ' ';
+  background-image: $sprite;
+  background-size: $sprite-size !important;
+  background-position: $img-x $img-y;
+  background-repeat: no-repeat;
+  @include hide-text;
+  .no-svg & {
+    background-image: $sprite-fallback;
+  }
+}
+
+// FLEXBOX http://css-tricks.com/snippets/css/a-guide-to-flexbox/
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex-flow($values) {
+  -webkit-box-flex-flow: $values;
+  -moz-box-flex-flow:  $values;
+  -webkit-flex-flow:  $values;
+  -ms-flex-flow:  $values;
+  flex-flow:  $values;
+}
+
+@mixin flex($values) { // (flex-grow flex-shrink flex-basis)
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;  
+  -moz-box-ordinal-group: $val;     
+  -ms-flex-order: $val;     
+  -webkit-order: $val;  
+  order: $val;
+}
+
+//ANIMATIONS USAGE @include animation(.5s, 5s, ease-in, fade-in);
+@mixin animation ($delay, $duration, $timing, $animation: linear) {
+  -webkit-animation-delay: $delay;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-timing-function: $timing;
+  -webkit-animation-name: $animation;
+  -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+  -moz-animation-delay: $delay;
+  -moz-animation-duration: $duration;
+  -moz-animation-timing-function: $timing;
+  -moz-animation-name: $animation;
+  -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+  -o-animation-delay: $delay;
+  -o-animation-duration: $duration;
+  -o-animation-timing-function: $timing;
+  -o-animation-name: $animation;
+  -o-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-timing-function: $timing;
+  animation-name: $animation;
+  animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+}
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+// ANIMATION TYPE
+@include keyframes(fade-in) {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@include keyframes(grow) {
+  0%   { max-height: 0; }
+  100% { max-height: 9999px; }
+}
+
+// OTHER STYLES
+
+@include selection {
+  background: $pink;
+  color: $white;
+}

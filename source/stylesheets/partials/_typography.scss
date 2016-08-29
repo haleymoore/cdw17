@@ -1,0 +1,121 @@
+$font-sans: 'gotham', 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+$font-narrow: 'bebas-neue', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
+
+@mixin font-narrow {
+  font-family: $font-narrow;
+  text-transform: uppercase;
+}
+
+@mixin font-social {
+  font-family: 'socicon' !important;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: $font-sans;
+  @include font-size(16);
+  color: $black;
+}
+
+p {
+	padding: 7px 0 12px;
+  color: $black;
+  &.leadin {
+    @include font-size(20);
+    text-align: center;
+  }
+}
+
+a {
+	text-decoration: none;
+  @include animate-object;
+  color: $blue;
+  &:hover {
+    background-color: $blue;
+    color: $white;
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+h1 {
+	@include font-size(40);
+  min-height: 147px;
+  padding-top: 45px;
+  text-align: center;
+	@include font-narrow;
+  color: $teal;
+  background: image-url("header_background.jpg") top center no-repeat;
+}
+
+h2 {
+  @include font-size(28);
+  color: $pink;
+  .presenters & {
+    @include font-size(25);
+    @include font-narrow;
+    color: $black;
+  }
+}
+
+h3 {
+  @include font-size(25);
+  @include font-narrow;
+  .presenters & {
+    @include font-size(17);
+    color: $pink;
+    font-family: $font-sans;
+    text-transform: none;
+  }
+  #partners & {
+    color: $pink;
+  }
+}
+
+h4 {
+  @include font-size(16);
+}
+
+.button {
+  @include box-sizing(border-box);
+  @include font-narrow;
+  @include font-size(23);
+  color: $white;
+  background-color: $pink;
+  padding: 5px 10px;
+  display: block;
+  text-align: center;
+  &:hover {
+    background-color: $white;
+    color: $pink;
+  }
+  @include respond-to(xsmall) {
+    display: inline-block;
+  }
+}
+
+ul {
+  li {
+    list-style-type: disc;
+    list-style-position: outside;
+    margin: 0 0 0 30px;
+  }
+}
+
+ol {
+  li {
+    list-style-type: decimal;
+    list-style-position: outside;
+    margin: 0 0 0 30px;
+  }
+}

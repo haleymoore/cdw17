@@ -1,33 +1,38 @@
 header {
-	@include site-width;
 	background: $white;
 	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	z-index: +2;
-	top: 0;
-	@include box-shadow(rgba($black, .1) 0px 2px 5px);
+	border: 15px solid $black;
 	.logo_small {
 		@include hide-text;
-		width: 107px;
-		height: 32px;
+		// width: 178px;
+		// height: 32px;
+		width: 135px;
+		height: 24px;
 		position: absolute;
-		top: -40px;
+		top: -50px;
 		left: 50%;
 		background: image-url('cdw_logo_small.png') no-repeat;
+		background-size: 130px 24px;
 		opacity: 1;
 		margin-left: -53px;
 		&:hover {
 			opacity: .5;
 		}
 		&.active {
-			top: 15px;
+			top: 17px;
 		}
 		@include respond-to(medium) {
+			top: -50px;
 			left: 5%;
 			margin-left: 0;
 			&.active {
-				top: 20px;
+				top: 25px;
 			}
 		}
 	}
@@ -38,12 +43,12 @@ header {
 		left: 5%;
 		padding: 5px;
 		font-family: $font-narrow;
-		color: $pink;
-		@include font-size(16);
+		color: $black;
+		@include font-size(13);
 		&::before {
 			content: ' ';
 			display: block;
-			width: 27px;
+			width: 33px;
 			height: 16px;
 			background: image-url('hamburger.png') no-repeat;
 		}
@@ -73,7 +78,7 @@ header {
 				li {
 					display: block;
 					border-right: none;
-					border-bottom: 1px solid $pink;
+					border-bottom: 1px solid $black;
 					margin: 0;
 					&:last-child {
 						border-bottom: none;
@@ -81,11 +86,12 @@ header {
 					a {
 						display: block;
 						@include font-narrow;
-						color: $pink;
+						color: $black;
 						@include font-size(25);
+						font-weight: bold;
 						padding: 5px 15px;
 						&:hover {
-							background: $pink;
+							background: $black;
 							color: $white;
 						}
 					}
@@ -95,7 +101,6 @@ header {
 					max-height: 100px;
 					li {
 						display: inline-block;
-						border-right: 1px solid $pink;
 						border-bottom: none;
 						&:last-child {
 							border-right: none;
@@ -116,9 +121,9 @@ header {
 						text-transform: none;
 						@include font-size(15);
 						padding: 5px;
-						color: $pink;
+						color: $black;
 						&:hover {
-							background: $pink;
+							background: $black;
 							color: $white;
 						}
 					}

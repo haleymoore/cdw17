@@ -7,7 +7,7 @@ $light-grey: #F1F1F2;
 $grey: #D1D2D4;
 
 $white: #fff;
-$black: #3E3F41;
+$black: #2E2A25;
 
 // OTHER VARIABLES
 
@@ -42,6 +42,9 @@ $black: #3E3F41;
   }
   @else if $media == large {
     @media only screen and (min-width: 1025px){ @content; }
+  }
+  @else if $media == xlarge {
+    @media only screen and (min-width: 1118px){ @content; }
   }
 }
 

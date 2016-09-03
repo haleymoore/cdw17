@@ -1,5 +1,5 @@
-$font-sans: 'gotham', 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-$font-narrow: 'bebas-neue', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
+$font-sans: 'Lato', sans-serif;
+$font-narrow: 'Lato', sans-serif;
 
 @mixin font-narrow {
   font-family: $font-narrow;
@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  font-family: $font-sans;
+  font-family: 'Lato', sans-serif;
   @include font-size(16);
   color: $black;
 }
@@ -33,9 +33,9 @@ p {
 a {
 	text-decoration: none;
   @include animate-object;
-  color: $blue;
+  color: #00ADEE;
   &:hover {
-    background-color: $blue;
+    background-color: #00ADEE;
     color: $white;
   }
   &:active {
@@ -49,13 +49,13 @@ strong {
 }
 
 h1 {
-	@include font-size(40);
+	@include font-size(30);
   min-height: 147px;
   padding-top: 45px;
   text-align: center;
-	@include font-narrow;
-  color: $teal;
-  background: image-url("header_background.jpg") top center no-repeat;
+  color: $black;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 h2 {
@@ -63,14 +63,12 @@ h2 {
   color: $pink;
   .presenters & {
     @include font-size(25);
-    @include font-narrow;
     color: $black;
   }
 }
 
 h3 {
   @include font-size(25);
-  @include font-narrow;
   .presenters & {
     @include font-size(17);
     color: $pink;

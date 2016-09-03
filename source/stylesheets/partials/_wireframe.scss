@@ -16,7 +16,18 @@ html {
 
 body {
   min-height: 100%;
-  background: $white image-url("gplaypattern.png");
+  background-color: $white;
+  background-image: image-url("hq-background.svg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: repeat-y;
+  border: none;
+  @include respond-to(xlarge) {
+    border: 15px solid $black;
+  }
+  .no-svg & {
+    background-image: image-url("hq-background.png");
+  }
 }
 
 img {
@@ -31,13 +42,35 @@ section {
   &.intro {
     display: block;
     padding: 0 0 60px;
+    text-align: center;
+    img {
+      width: 100%;
+      height: auto;
+      margin: 60px auto;
+      @include respond-to(medium) {
+        width: 80%;
+      }
+    }
   }
   aside {
     display: block;
+    border: 15px solid $black;
+  }
+  &#presenters aside {
+    background-color: #FF5B35;
+  }
+  &#schedule aside {
+    background-color: #FFB547;
+  }
+  &#tickets aside {
+    background-color: #A3DED2;
+  }
+  &#partners aside {
+    background-color: #00aeef;
   }
   .main {
     display: block;
-    padding-top: 0;
+    padding: 0 0 0 30px;
   }
   @include respond-to(medium) {
     @include flexbox();
@@ -62,4 +95,5 @@ section {
   position: relative;
   padding-top: 70px;
   @include box-shadow(rgba($black, .1) 0 0 7px);
+  border: 15px solid $black;
 }

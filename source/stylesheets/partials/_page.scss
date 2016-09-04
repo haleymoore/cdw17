@@ -29,6 +29,7 @@
 .schedule {
 	a {
 		color: #FF5B35;
+		font-weight: bold;
 		&:hover {
 			background-color: #FF5B35;
 			color: $white;
@@ -51,9 +52,14 @@
 }
 
 .event {
-	border-top: 1px dashed $grey;
+	border-top: 5px solid $black;
 	margin: 30px 0;
 	padding: 30px 0;
+}
+
+#partners h2 {
+	text-align: center;
+	margin: 60px auto 0;
 }
 
 .partners {

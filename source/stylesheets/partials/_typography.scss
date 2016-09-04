@@ -51,8 +51,8 @@ strong {
 
 h1 {
 	@include font-size(30);
-  min-height: 147px;
-  padding-top: 45px;
+  // min-height: 147px;
+  padding: 45px 0;
   text-align: center;
   color: $black;
   text-transform: uppercase;

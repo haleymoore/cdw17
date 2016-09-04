@@ -117,7 +117,7 @@ header {
 					display: inline-block;
 					margin: 0;
 					a {
-						@include font-social;
+						font-family: 'socicon';
 						text-transform: none;
 						@include font-size(15);
 						padding: 5px;

@@ -2,6 +2,19 @@
 
 $(document).ready(function(){
 
+	// RANDOM LOGO
+	var description = [
+	  "images/logo-cdw-1.svg",
+	  "images/logo-cdw-2.svg",
+	  "images/logo-cdw-3.svg",
+	  "images/logo-cdw-4.svg",
+	  "images/logo-cdw-5.svg"
+	];
+
+	var size = description.length
+	var x = Math.floor(size*Math.random())
+	document.getElementById('cdw-logo').src=description[x];
+
 	$(function() { // SMOOTH SCROLL
 	  $('a[href*=#]:not([href=#])').click(function() {
 	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {

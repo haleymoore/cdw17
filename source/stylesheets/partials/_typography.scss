@@ -64,9 +64,13 @@ h2 {
   color: #00ADEE;
   text-transform: uppercase;
   font-weight: bold;
-  .presenters & {
+  .presenters &,
+  .keynote-presenter & {
     @include font-size(25);
     color: $black;
+  }
+  &.keynote {
+    text-align: center;
   }
 }
 
@@ -77,6 +81,13 @@ h3 {
     color: #00ADEE;
     font-family: $font-sans;
     text-transform: none;
+  }
+  .keynote-presenter & {
+    @include font-size(20);
+    color: #00ADEE;
+    font-family: $font-sans;
+    text-transform: none;
+
   }
   #partners & {
     color: #00ADEE;

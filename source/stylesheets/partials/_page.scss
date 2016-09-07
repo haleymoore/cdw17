@@ -1,3 +1,13 @@
+.keynote-presenter {
+	text-align: center;
+	li {
+		margin: 0 auto;
+		padding: 20px;
+		max-width: 270px;
+		list-style: none;
+	}
+}
+
 .presenters {
 	li {
 		display: inline-block;

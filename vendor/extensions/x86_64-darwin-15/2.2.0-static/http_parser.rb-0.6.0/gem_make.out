@@ -1,0 +1,12 @@
+/Users/hrbiel/.rbenv/versions/2.2.3/bin/ruby -r ./siteconf20170418-14888-1qb553s.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling ruby_http_parser.c
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.bundle
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 ruby_http_parser.bundle ./.gem.20170418-14888-62ncx3

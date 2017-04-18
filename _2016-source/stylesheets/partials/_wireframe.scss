@@ -1,0 +1,102 @@
+@mixin site-width {
+  width: 100%;
+  padding: 0 5%;
+  @include box-sizing(border-box);
+}
+
+@mixin full-width { //overrides site width for full bleed
+    width: 111.5%;
+    margin: 0 -5.95% 0 -5.95%;
+    @include box-sizing(border-box);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background-color: $white;
+  background-image: image-url("hq-background.svg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: repeat-y;
+  border: none;
+  @include respond-to(xlarge) {
+    border: 15px solid $black;
+  }
+  .no-svg & {
+    background-image: image-url("hq-background.png");
+  }
+}
+
+img {
+  border: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  display: block;
+  padding: 60px 0;
+  &.intro {
+    display: block;
+    padding: 0 0 60px;
+    text-align: center;
+    img {
+      width: 100%;
+      height: auto;
+      margin: 60px auto;
+      @include respond-to(medium) {
+        width: 80%;
+      }
+    }
+  }
+  aside {
+    display: block;
+    border: 15px solid $black;
+  }
+  &#presenters aside {
+    background-color: #FF5B35;
+  }
+  &#schedule aside {
+    background-color: #FFB547;
+  }
+  &#tickets aside {
+    background-color: #A3DED2;
+  }
+  &#partners aside {
+    background-color: #00aeef;
+  }
+  .main {
+    display: block;
+    padding: 0;
+    @include respond-to(medium) {
+      padding: 0 0 0 30px;
+    }
+  }
+  @include respond-to(medium) {
+    @include flexbox();
+    padding: 30px 0;
+    aside {
+      @include flex(0 0 200px);
+    }
+    .main {
+      @include flex(1 1 auto);
+      padding-top: 45px;
+    }
+  }
+}
+
+.bodycontent {
+  @include site-width;
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: $white;
+  display: block;
+  min-height: 100%;
+  position: relative;
+  padding-top: 70px;
+  @include box-shadow(rgba($black, .1) 0 0 7px);
+  border: 15px solid $black;
+}

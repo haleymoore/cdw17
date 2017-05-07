@@ -6,6 +6,8 @@ https://middlemanapp.com/basics/install/
 To start your server
 bundle exec middleman server
 
+Running on localhost:4567
+
 To rebuild with your changes from source
 bundle exec middleman build
 

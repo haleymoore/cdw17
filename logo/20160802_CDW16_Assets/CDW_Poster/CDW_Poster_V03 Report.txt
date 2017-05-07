@@ -1,0 +1,66 @@
+Package Report
+
+-----------------------------------------------------------------------------
+Document:
+Name: CDW_Poster_V03.ai
+Color Mode: CMYK color
+Color Profile: U.S. Web Coated (SWOP) v2
+Ruler Units: inches
+Artboard Dimensions: 16 in x 24 in
+Show Images in Outline Mode: OFF
+Highlight Substituted Fonts: OFF
+Highlight Substituted Glyphs: OFF
+Preserve Text Editability
+Simulate Colored Paper: OFF
+
+-----------------------------------------------------------------------------
+Spot Color Objects:
+PANTONE 1365 C (Lab)
+PANTONE 144 C (Lab)
+PANTONE 158 C (Lab)
+PANTONE 1625 C (Lab)
+PANTONE 169 C (Lab)
+PANTONE 171 C (Lab)
+PANTONE 178 C (Lab)
+PANTONE 1785 C (Lab)
+PANTONE 283 C (Lab)
+PANTONE 324 C (Lab)
+PANTONE 331 C (Lab)
+PANTONE 337 C (Lab)
+PANTONE 345 C (Lab)
+PANTONE 346 C (Lab)
+PANTONE 353 C (Lab)
+PANTONE 386 C (Lab)
+PANTONE 420 C (Lab)
+PANTONE 427 C (Lab)
+PANTONE 565 C (Lab)
+PANTONE 566 C (Lab)
+PANTONE 572 C (Lab)
+PANTONE 628 C (Lab)
+PANTONE 7540 C (Lab)
+PANTONE Black C (Lab)
+PANTONE Green 0921 C (Lab)
+
+-----------------------------------------------------------------------------
+Missing Fonts:NONE
+
+-----------------------------------------------------------------------------
+Protected Fonts that were not packaged:NONE
+
+-----------------------------------------------------------------------------
+Fonts:
+Avenir Book (TrueType)
+Avenir Black (TrueType)
+Avenir Heavy (TrueType)
+
+-----------------------------------------------------------------------------
+Embedded Fonts:
+NONE
+
+-----------------------------------------------------------------------------
+Missing Links:
+NONE
+
+-----------------------------------------------------------------------------
+Linked Images:
+NONE

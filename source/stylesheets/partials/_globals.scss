@@ -1,13 +1,15 @@
 // COLORS
-$pink: #ff0068;
-$blue: #2daebf;
-$teal: #6e8e8e;
+$pink:   #ff0068;
+$blue:   #2daebf;
+$teal:   #6e8e8e;
+$red:    #FF5B35;
+$sage:   #A3DED2;
+$yellow: #FFB547;
+$black:  #2E2A25;
 
 $light-grey: #F1F1F2;
-$grey: #D1D2D4;
-
-$white: #fff;
-$black: #2E2A25;
+$grey:       #D1D2D4;
+$white:      #fff;
 
 // OTHER VARIABLES
 
@@ -116,7 +118,7 @@ $sprite-size: 400px 3759px;
   }
   &:hover {
     background-position: $hover-x $position-y;
-  }   
+  }
 }
 
 @mixin img-content($img-x, $img-y) {
@@ -157,10 +159,10 @@ $sprite-size: 400px 3759px;
 }
 
 @mixin order($val) {
-  -webkit-box-ordinal-group: $val;  
-  -moz-box-ordinal-group: $val;     
-  -ms-flex-order: $val;     
-  -webkit-order: $val;  
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
   order: $val;
 }
 

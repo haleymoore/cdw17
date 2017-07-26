@@ -38,10 +38,10 @@
 
 .schedule {
 	a {
-		color: #FF5B35;
+		color: $blue;
 		font-weight: bold;
 		&:hover {
-			background-color: #FF5B35;
+			background-color: $blue;
 			color: $white;
 		}
 		&.ticket {

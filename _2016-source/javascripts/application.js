@@ -51,11 +51,11 @@ $(document).ready(function(){
 	// SCROLL FUNCTIONS
 	$(window).scroll(function() {
 
-		var leadinoffset = $(".leadin").offset(); 
+		var leadinoffset = $(".leadin").offset();
 		var scrollpos = $(window).scrollTop();
 
 		if (scrollpos >= leadinoffset.top) {
-		  $('.logo_small').addClass("active");   
+		  $('.logo_small').addClass("active");
 		} else {
 		  $('.logo_small').removeClass("active");
 		}

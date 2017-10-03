@@ -1,0 +1,137 @@
+header {
+	background: $white;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	z-index: +2;
+	border: 15px solid $black;
+	.logo_small {
+		@include hide-text;
+		// width: 178px;
+		// height: 32px;
+		width: 135px;
+		height: 24px;
+		position: absolute;
+		top: -50px;
+		left: 50%;
+		background: image-url('cdw_logo_small.png') no-repeat;
+		background-size: 130px 24px;
+		opacity: 1;
+		margin-left: -70px;
+		&:hover {
+			opacity: .5;
+		}
+		&.active {
+			top: 17px;
+		}
+		@include respond-to(medium) {
+			top: -50px;
+			left: 5%;
+			margin-left: 0;
+			&.active {
+				top: 25px;
+			}
+		}
+	}
+	.hamburger {
+		position: absolute;
+		display: block;
+		top: 10px;
+		left: 5%;
+		padding: 5px;
+		font-family: $font-narrow;
+		color: $black;
+		@include font-size(13);
+		&::before {
+			content: ' ';
+			display: block;
+			width: 33px;
+			height: 16px;
+			background: image-url('hamburger.png') no-repeat;
+		}
+		&:hover {
+			background: none;
+		}
+		&.active {
+			&::before {
+				background: image-url('hamburger_close.png') no-repeat;
+			}
+		}
+		@include respond-to(medium) {
+			display: none;
+		}
+	}
+	nav {
+		text-align: center;
+		ul {
+			&.main {
+				margin-top: 30px;
+				max-height: 0;
+				overflow: hidden;
+				@include animate-object;
+				&.active {
+					max-height: 250px;
+				}
+				li {
+					display: block;
+					border-right: none;
+					border-bottom: 1px solid $black;
+					margin: 0;
+					&:last-child {
+						border-bottom: none;
+					}
+					a {
+						display: block;
+						@include font-narrow;
+						color: $black;
+						@include font-size(25);
+						font-weight: bold;
+						padding: 5px 15px;
+						&:hover {
+							background: $black;
+							color: $white;
+						}
+					}
+				}
+				@include respond-to(medium) {
+					margin-top: 0;
+					max-height: 100px;
+					li {
+						display: inline-block;
+						border-bottom: none;
+						&:last-child {
+							border-right: none;
+						}
+					}
+				}
+			}
+			&.social {
+				position: absolute;
+				margin-top: 0;
+				top: 20px;
+				right: 5%;
+				li {
+					display: inline-block;
+					margin: 0;
+					a {
+						font-family: 'socicon';
+						text-transform: none;
+						@include font-size(15);
+						padding: 5px;
+						color: $black;
+						&:hover {
+							background: $black;
+							color: $white;
+						}
+					}
+				}
+				@include respond-to(medium) {
+					top: 25px;
+				}
+			}
+		}
+	}
+}

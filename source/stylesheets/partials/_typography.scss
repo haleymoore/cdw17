@@ -52,7 +52,7 @@ strong {
 h1 {
 	@include font-size(30);
   // min-height: 147px;
-  padding: 45px 0;
+  padding: 15px 0;
   text-align: center;
   color: $black;
   text-transform: uppercase;
@@ -64,6 +64,7 @@ h2 {
   color: #00ADEE;
   text-transform: uppercase;
   font-weight: bold;
+  padding: 15px 0;
   .presenters &,
   .keynote-presenter & {
     @include font-size(25);

@@ -7,8 +7,7 @@ $(document).ready(function(){
 	  "images/logo-cdw-1.svg",
 	  "images/logo-cdw-2.svg",
 	  "images/logo-cdw-3.svg",
-	  "images/logo-cdw-4.svg",
-	  "images/logo-cdw-5.svg"
+	  "images/logo-cdw-4.svg"
 	];
 
 	var size = description.length

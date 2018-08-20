@@ -12,13 +12,13 @@ header {
 		@include hide-text;
 		// width: 178px;
 		// height: 32px;
-		width: 135px;
+		width: 80px;
 		height: 24px;
 		position: absolute;
 		top: -50px;
 		left: 50%;
 		background: image-url('cdw_logo_small.png') no-repeat;
-		background-size: 130px 24px;
+		background-size: 80px;
 		opacity: 1;
 		margin-left: -70px;
 		&:hover {
@@ -87,7 +87,7 @@ header {
 						display: block;
 						@include font-narrow;
 						color: $black;
-						@include font-size(25);
+						@include font-size(18);
 						font-weight: bold;
 						padding: 5px 15px;
 						&:hover {

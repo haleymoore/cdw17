@@ -1,0 +1,93 @@
+.keynote-presenter {
+	text-align: center;
+	li {
+		margin: 0 auto;
+		padding: 20px;
+		max-width: 270px;
+		list-style: none;
+	}
+}
+
+.presenters {
+	li {
+		display: inline-block;
+		max-width: 100%;
+		padding: 20px;
+		margin: 0;
+		vertical-align: top;
+		@include box-sizing(border-box);
+		&.morepresenters {
+			h2 {
+				margin-top: 50%;
+				color: #FF5B35;
+				text-align: center;
+				@include font-size(30);
+				line-height: 30px;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+		}
+		@include respond-to(xsmall) {
+			max-width: 49%;
+		}
+		@include respond-to(medium) {
+			max-width: 32%;
+		}
+	}
+}
+
+.schedule {
+	a {
+		color: $blue;
+		font-weight: bold;
+		&:hover {
+			background-color: $blue;
+			color: $white;
+		}
+		&.ticket {
+			display: block;
+			color: $blue;
+			@include font-size(14);
+			margin-top: 5px;
+			&:after {
+				content: " ▶";
+				opacity: .5;
+			}
+			&:hover {
+				background-color: $blue;
+				color: $white;
+			}
+		}
+	}
+}
+
+.event {
+	border-top: 5px solid $black;
+	margin: 20px 0;
+	padding: 90px 0;
+}
+
+#partners h2 {
+	text-align: center;
+	margin: 60px auto 0;
+}
+
+.partners {
+	text-align: center;
+	&:hover {
+		a {
+			opacity: .5;
+		}
+	}
+	li {
+		display: inline-block;
+		margin: 30px;
+		vertical-align: middle;
+		a {
+			&:hover {
+				background-color: $white;
+				opacity: 1;
+			}
+		}
+	}
+}

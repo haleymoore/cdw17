@@ -1,0 +1,192 @@
+$font-sans: 'Lato', sans-serif;
+$font-narrow: 'Lato', sans-serif;
+
+@mixin font-narrow {
+  font-family: $font-narrow;
+  text-transform: uppercase;
+}
+
+@mixin font-social {
+  font-family: 'socicon' !important;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  @include font-size(16);
+  color: $black;
+}
+
+p {
+	padding: 7px 0 12px;
+  color: $black;
+  &.leadin {
+    @include font-size(20);
+    text-align: left;
+  }
+}
+
+a {
+	text-decoration: none;
+  @include animate-object;
+  color: #FF5B35;
+  font-weight: bold;
+  &:hover {
+    background-color: #FF5B35;
+    color: $white;
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+h1 {
+	@include font-size(30);
+  // min-height: 147px;
+  padding: 15px 0;
+  text-align: center;
+  color: $black;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+h2 {
+  @include font-size(28);
+  color: #00ADEE;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 15px 0;
+  .presenters &,
+  .keynote-presenter & {
+    @include font-size(25);
+    color: $black;
+  }
+  &.keynote {
+    text-align: center;
+  }
+}
+
+h3 {
+  @include font-size(25);
+  .presenters & {
+    @include font-size(17);
+    color: #00ADEE;
+    font-family: $font-sans;
+    text-transform: none;
+  }
+  .keynote-presenter & {
+    @include font-size(20);
+    color: #00ADEE;
+    font-family: $font-sans;
+    text-transform: none;
+
+  }
+  #partners & {
+    color: #00ADEE;
+  }
+  &.comingsoon {
+    color: #FF5B35;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+h4 {
+  @include font-size(16);
+}
+
+h5 {
+  @include font-size(18);
+  font-weight: bold;
+  color: tint(#FF5B35, 25%);
+  margin-bottom: 10px;
+
+}
+
+.event{
+  h2{
+    a{
+      color: #00adee;
+    }
+    a:hover{
+      background-color: #00adee;
+      color: $white;
+    }
+  }
+  h4 {
+    font-weight: bold;
+  }
+  p.ticket-price{
+    @include font-size(14);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height:1.6;
+    margin-top:20px;
+  }
+}
+
+.button {
+  @include box-sizing(border-box);
+  @include font-narrow;
+  @include font-size(23);
+  color: $white;
+  background-color: #FF5B35;
+  padding: 5px 10px;
+  display: block;
+  text-align: center;
+  &:hover {
+    background-color: $white;
+    color: #FF5B35;
+  }
+  @include respond-to(xsmall) {
+    display: inline-block;
+  }
+}
+
+ul {
+  li {
+    list-style-type: disc;
+    list-style-position: outside;
+    margin: 0 0 0 30px;
+  }
+}
+
+ol {
+  li {
+    list-style-type: decimal;
+    list-style-position: outside;
+    margin: 0 0 0 30px;
+  }
+}
+
+div.soldout{
+  width: 100%;
+  padding: 8px 8px;
+  margin: 16px auto;
+  background: #FFB547;
+  p{
+    color: #000;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0;
+    letter-spacing: 0.5px;
+    a{
+      font-weight: normal;
+      text-decoration: underline;
+      color: #000;
+    }
+    a:hover{
+      font-weight:bold;
+      background:none;
+    }
+  }
+}
